@@ -38,8 +38,8 @@
 <body>
     <div class="container" id="passcode-page">
         <h1>Hello Ms. Rutherford</h1>
-        <p>Enter the last four digits of your phone number</p>
-        <input type="password" id="passcode" placeholder="Enter Passcode">
+        <p>Enter your birthday</p>
+        <input type="password" id="passcode" placeholder="Day/Month/Year">
         <button class="button" onclick="checkPasscode()">Submit</button>
     </div>
 
@@ -100,12 +100,14 @@
 
     <script>
         function checkPasscode() {
-            const passcode = document.getElementById('passcode').value;
-            if (passcode === "5855") { // Change "5855" to the actual last four digits of your phone number
-                document.getElementById('passcode-page').style.display = 'none';
-                document.getElementById('page1').style.display = 'block';
+    const passcode = document.getElementById('passcode').value;
+    const validPasscodes = ["26/07/2002", "26-07-2002", "26072002", "July 26, 2002"]; // Add all valid variants
+
+    if (validPasscodes.includes(passcode)) {
+        document.getElementById('passcode-page').style.display = 'none';
+        document.getElementById('page1').style.display = 'block';
             } else {
-                alert("Incorrect passcode");
+                alert("That's not your Birthday.... Dumbass");
             }
         }
 
