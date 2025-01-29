@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Surprise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid #ff69b4;
+            border-radius: 10px;
+            background-color: #fff0f5;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff69b4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="passcode-page">
+        <h1>Hello Ms. Rutherford</h1>
+        <p>Enter the last four digits of your phone number</p>
+        <input type="password" id="passcode" placeholder="Enter Passcode">
+        <button class="button" onclick="checkPasscode()">Submit</button>
+    </div>
+
+    <div class="container" id="page1" style="display:none;">
+        <h1>Hiii FREAK </h1>
+        <a href="#page2" class="button">Continue</a>
+    </div>
+
+    <div class="container" id="page2" style="display:none;">
+        <h2>I don't trust the weirdos at the flower store... </h2>
+        <h2>so I made this <3</h2>
+        <a href="#page3" class="button">Continue</a>
+    </div>
+
+   <div class="container" id="page3" style="display:none;">
+    <h3>Even if you were a booger, I'd pick you</h3>
+    <div class="iframe-container">
+        <iframe src="https://drive.google.com/file/d/1QNVBc8fo_Td8cCm2smlFU4zZWga8urRM/preview" allow="autoplay"></iframe>
+    </div>
+<h3> Here are some lilies incase the ones outside don't bloom</h3>
+    <h3> Happy Valentines Day</h3>
+    <h3> Love, Andrew <h3>
+    <h6> Sorry we didn't get anymore photos so it's back to this one. <h6>
+    
+</div>
+
+<style>
+    .iframe-container {
+        width: 100%;
+        max-width: 400px; /* Adjust based on your image size */
+        margin: auto;
+        position: relative;
+        overflow: hidden;
+        padding-top: 80%; /* Adjust based on your image's aspect ratio */
+    }
+    
+    .iframe-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+</style>
+
+
+
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+    <script>
+        function checkPasscode() {
+            const passcode = document.getElementById('passcode').value;
+            if (passcode === "5855") { // Change "5855" to the actual last four digits of your phone number
+                document.getElementById('passcode-page').style.display = 'none';
+                document.getElementById('page1').style.display = 'block';
+            } else {
+                alert("Incorrect passcode");
+            }
+        }
+
+        document.querySelectorAll('.button').forEach(button => {
+            button.addEventListener('click', function(event) {
+                if (this.getAttribute('href')) {
+                    event.preventDefault();
+                    document.querySelectorAll('.container').forEach(container => container.style.display = 'none');
+                    const target = this.getAttribute('href');
+                    document.querySelector(target).style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
